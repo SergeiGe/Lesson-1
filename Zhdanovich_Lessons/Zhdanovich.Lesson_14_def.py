@@ -59,17 +59,17 @@ while True:
     elif sign == '*':
         print('Произведение: ', multiplication(chislo1, chislo2))
     elif sign == '/':
-        if b == 0:
+        if chislo2 == 0:
             print('Нельзя делить на 0!')
             continue
         print('Частное: ', division(chislo1, chislo2))
     elif sign == '//':
-        if b == 0:
+        if chislo2 == 0:
             print('Нельзя делить на 0!')
             continue
         print('Целая часть от деления: ', whole_part(chislo1, chislo2))
     elif sign == '%':
-        if b == 0:
+        if chislo2 == 0:
             print('Нельзя делить на 0!')
             continue
         print('Остаток от деления: ', remainder(chislo1, chislo2))
