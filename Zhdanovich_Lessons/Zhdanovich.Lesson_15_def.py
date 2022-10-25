@@ -19,13 +19,16 @@
 
 # def count_summ(n):
 #     return n + n*n + n*n*n
-
-# def count_sum_posled(n):
-#     if n == 1:
-#         return 1
-#     else:
-#         return n + count_sum_posled(n ** (n - 1))
 #
+# print(count_summ(3))
+#
+#
+# # Рекурсивная функция
+# def count_sum_posled(n, st=2):
+#     if st == 0:
+#         return n
+#     else:
+#         return n + n * count_sum_posled(n, st-1)
 #
 # print(count_sum_posled(3))
 
@@ -55,29 +58,46 @@
 #    Если строка - количество букв
 #    Если другой тип данных, то вывести сообщение "Error"
 #
-def multi_funct(item):
-    if type(item) == tuple:
-        return 'Количество строк в кортеже:', len(item)
-    elif type(item) == list:
-        number_strok = 0
-        number_chisel = 0
-        for i in item:
-            if type(i) == str: number_strok += 1
-            elif type(i) == int or float: number_chisel += 1
-            return f'Количество строк в списке: {number_strok} \nКоличество чисел в списке: {number_chisel}'
-    elif type(item) == int or float: return f'Количество цифр в числе: {len(str(item))}'
-    elif type(item) == str: return f'Количество букв в строке: {len(item)}'
-    else: return 'Error!'
-
-
-
-
-print(multi_funct([1, 1.23, 'abc', 'ABC', 6.45, 2, 3, 4, 4.98]))
-print(multi_funct(12.3))
+# def multi_funct(item):
+#     if type(item) == tuple:
+#         return 'Количество строк в кортеже:', len(item)
+#     elif type(item) == list:
+#         number_strok = 0
+#         number_chisel = 0
+#         for i in item:
+#             if type(i) == str: number_strok += 1
+#             elif type(i) == int or float: number_chisel += 1
+#             return f'Количество строк в списке: {number_strok} \nКоличество чисел в списке: {number_chisel}'
+#     elif type(item) == int or float: return f'Количество цифр в числе: {len(str(item))}'
+#     elif type(item) == str: return f'Количество букв в строке: {len(item)}'
+#     else: return 'Error!'
+#
+#
+#
+#
+# print(multi_funct([1, 1.23, 'abc', 'ABC', 6.45, 2, 3, 4, 4.98]))
+# print(multi_funct(12.3))
 
 # print(type((1,)))
 # sp = ['hjhjhj', 1, '2', 4, 'лоолл', 5]
 # a = [1, 1.23, 'abc', 'ABC', 6.45, 2, 3, 4, 4.98]
 # print(list(map(type, a)).count(int))
 
+
 # 5. Написать декоратор, который считает, сколько раз в него отправили функцию
+
+# def decorator_count(func):
+#     def wrapper(*args, **kwargs):
+#         wrapper.count += 1
+#         res = func(*args, **kwargs)
+#         print(f'В декоратор функция {func.__name__} отправлялась {wrapper.count} раз')
+#         return res
+#     wrapper.count = 0
+#     return wrapper
+# @decorator_count
+# def add(a, b):
+#     return(f'Сумма чисел {a} и {b} равна: {a + b}')
+#
+# print(add(2, 3))
+# print(add(20, 3))
+# print(add(20, 30))
