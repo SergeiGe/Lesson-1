@@ -30,7 +30,7 @@ class Company:
 #     1) _index передается параметром и 2) _levels - принимает из словаря levels значение с ключом _index
     def __init__(self, index):
         self._index = index
-        self._levels = self.levels[index]
+        self._levels = self.levels[self._index]
 
 # 4. Создайте метод _level_up(), который будет переводить программиста на следующий уровень
     def _level_up(self):
@@ -94,7 +94,7 @@ class Programmer(Company):
 
 # company = Company()
 # company.is_lead()
-programmer = Programmer('Serg', 30, 1)
+programmer = Programmer('Serg', 30, 2)
 programmer.info()
 programmer.work(95)
 programmer.work(80)
