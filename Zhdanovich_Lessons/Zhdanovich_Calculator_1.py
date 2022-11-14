@@ -177,11 +177,15 @@ class Calculator(QWidget):
         self.operand_1 = float(self.label.text())
         self.label.setText('')
     def step1(self):
-        self.operation = '^'
+        self.operation = 'x^y'
         self.operand_1 = float(self.label.text())
         self.label.setText('')
     def sqrt1(self):
         self.operation = '√'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+    def kvadrat(self):
+        self.operation = '^2'
         self.operand_1 = float(self.label.text())
         self.label.setText('')
 
@@ -209,6 +213,6 @@ class Calculator(QWidget):
 
 
 app = QApplication(sys.argv)
-calc =Calculator()
-calc.show()
+ex = Calculator()
+ex.show()
 sys.exit(app.exec())
