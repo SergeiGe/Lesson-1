@@ -22,7 +22,7 @@ class Calculator(QWidget):
         self.label = QLabel(self)
         self.label.setAlignment(Qt.AlignRight)
         self.label.setFont(QtGui.QFont('Times',16))
-        self.label.setStyleSheet('backgroun-color: grey')
+        self.label.setStyleSheet('backgroun-color: green')
 
         self.label.setText('0')
         self.label.resize(275, 100)
@@ -204,8 +204,10 @@ class Calculator(QWidget):
         elif self.operation == '/':
             if self.operand_2 == 0: self.label.setText('Ошибка! Деление на ноль.')
             else: self.label.setText(str(self.operand_1 / self.operand_2))
-        elif self.operation == '^':
+        elif self.operation == 'x^y':
             self.label.setText(str(self.operand_1 ** self.operand_2))
+        elif self.operation == '^2':
+            self.label.setText(str(self.operand_1 ** 2))
         elif self.operation == '√':
             self.label.setText('')
 
